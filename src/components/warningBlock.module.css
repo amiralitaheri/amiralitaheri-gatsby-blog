@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 8px;
+  border-right: 4px solid;
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  &.error {
+    background: var(--color-error-dim);
+    color: var(--color-error);
+    border-color: var(--color-error);
+  }
+
+  &.warning {
+    background: var(--color-warning-dim);
+    color: var(--color-warning);
+    border-color: var(--color-warning);
+  }
+}

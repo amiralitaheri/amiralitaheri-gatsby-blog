@@ -1,0 +1,45 @@
+.work {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.verticalLine {
+  border-left: 5px solid var(--color-accent);
+}
+
+.text {
+  width: max(40vw, 400px);
+  padding: min(5vw, 50px);
+  a {
+    color: var(--color-accent);
+    &:hover {
+      color: var(--color-very-light-gray);
+    }
+  }
+}
+
+.image {
+  margin: min(3vw, 50px);
+  max-width: min(60vw, 400px);
+  max-height: min(60vw, 400px);
+    filter: grayscale(1);
+}
+
+.date {
+  font-size: var(--font-small-size);
+}
+
+.tags {
+  align-self: end;
+  justify-self: end;
+   span {
+    color: var(--color-light-gray);
+    font-size: var(--font-small-size);
+    margin-right: 10px;
+    &::before {
+      content: "#";
+    }
+  }
+}
