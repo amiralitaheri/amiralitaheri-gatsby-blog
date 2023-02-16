@@ -6,7 +6,7 @@ import * as styles from "./blogPost.module.css";
 import { cn } from "./utils";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Frontmatter } from "../types/post";
-import PostFooter from './postFooter'
+import PostFooter from "./postFooter";
 
 const BlogPost: FC<
   {
@@ -28,7 +28,7 @@ const BlogPost: FC<
           <div className={cn(styles.mainContent, language)}>
             <h1 className={styles.title}>{title}</h1>
             {children}
-              <PostFooter tags={tags}/>
+            <PostFooter tags={tags} />
           </div>
           <aside className={styles.metaContent}>
             {publishedAt && (
