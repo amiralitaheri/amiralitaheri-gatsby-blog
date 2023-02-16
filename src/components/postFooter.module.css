@@ -1,0 +1,79 @@
+.footer {
+  border-top: 1px white solid;
+  padding-top: 1em;
+  display: flex;
+  direction: ltr;
+  justify-content: space-between;
+  align-items: start;
+
+  & div {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+  }
+}
+
+.actionButton {
+  align-items: center;
+  display: flex;
+  background: transparent;
+  color: var(--color-white);
+  border: none;
+
+  & svg {
+    padding-right: 0.2em;
+  }
+
+  &:focus {
+    outline: var(--color-accent) auto 1px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--color-accent);
+      cursor: pointer;
+
+      & svg {
+        fill: var(--color-accent);
+      }
+    }
+  }
+}
+
+.shareButton {
+  align-items: center;
+  display: flex;
+  background: transparent;
+  color: var(--color-white);
+  border: none;
+
+  & svg {
+    padding-right: 0.2em;
+    stroke: var(--color-white);
+    stroke-width: 20px;
+    fill: transparent;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &:focus {
+    outline: var(--color-accent) auto 1px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--color-accent);
+      cursor: pointer;
+
+      & svg {
+        fill: var(--color-accent);
+        stroke: var(--color-accent);
+      }
+    }
+  }
+}
+
+.shareButtons {
+  display: flex;
+  flex-wrap: wrap;
+}
