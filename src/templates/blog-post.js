@@ -19,7 +19,7 @@ export const Head = ({ pageContext }) => (
   <Seo
     title={pageContext.frontmatter.title || "Untitled"}
     description={pageContext.frontmatter.excerpt}
-    // image={post.mainImage}
+    mainImage={pageContext.frontmatter.mainImage.src}
     keywords={pageContext.frontmatter.tags.join(",")}
   />
 );

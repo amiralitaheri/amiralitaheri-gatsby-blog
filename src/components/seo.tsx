@@ -1,15 +1,23 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { FC } from "react";
+import { getImage, ImageDataLike } from "gatsby-plugin-image";
 
 interface SeoProps {
   description?: string;
   title?: string;
   keywords?: string;
+  mainImage?: ImageDataLike;
   children?: React.ReactNode;
 }
 
-const Seo: FC<SeoProps> = ({ description, title, keywords, children }) => {
+const Seo: FC<SeoProps> = ({
+  description,
+  title,
+  keywords,
+  children,
+  mainImage,
+}) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -27,6 +35,7 @@ const Seo: FC<SeoProps> = ({ description, title, keywords, children }) => {
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
   const keys = keywords || site.siteMetadata?.keywords;
+  const image = mainImage && getImage(mainImage);
 
   return (
     <>
@@ -35,6 +44,9 @@ const Seo: FC<SeoProps> = ({ description, title, keywords, children }) => {
       <meta name="keywords" content={keys} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
+      {image && image.images.fallback?.src && (
+        <meta property="og:image" content={image.images.fallback?.src} />
+      )}
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={title} />
