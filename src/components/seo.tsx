@@ -45,10 +45,15 @@ const Seo: FC<SeoProps> = ({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
       {image && image.images.fallback?.src && (
-        <meta property="og:image" content={image.images.fallback?.src} />
+        <>
+          <meta property="og:image" content={image.images.fallback?.src} />
+          <meta property="twitter:image" content={image.images.fallback?.src} />
+          <meta name="twitter:card" content="summary_large_image" />
+        </>
       )}
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary" />
+      <meta name="twitter:creator" content="@amiralitaheri64" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
       <link
