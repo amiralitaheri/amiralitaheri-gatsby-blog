@@ -9,7 +9,7 @@ const MainSpeech = () => (
       <li>React front-end developer</li>
       <li>Professional google searcher</li>
       <li>A Confused man in tech world</li>
-      <li>Computer engineering student</li>
+      <li className={styles.lineThrough}>Computer engineering student</li>
     </ul>
     <div style={{ height: "2em" }} />
     <Link className={styles.primaryAction} to="/blog/">
