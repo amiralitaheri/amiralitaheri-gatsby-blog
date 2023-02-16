@@ -46,7 +46,7 @@ module.exports = {
           {
             resolve: "gatsby-remark-images",
             options: {
-              showCaptions: true
+              showCaptions: true,
             },
           },
         ],
@@ -68,6 +68,19 @@ module.exports = {
             file: "https://fonts.googleapis.com/css2?family=Vazirmatn:wght@200;300;400;500;700&display=swap",
           },
         ],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-hotjar",
+      options: {
+        id: process.env.HOTJAR_ID,
+        sv: process.env.HOTJAR_SNIPPET_VERSION,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-gtag",
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID,
       },
     },
   ],
