@@ -11,7 +11,7 @@ import { Frontmatter } from "../types/post";
 const BlogPostPreview: FC<{ frontmatter: Frontmatter }> = ({ frontmatter }) => {
   const image = getImage(frontmatter.mainImage.src);
   return (
-    <Link className={styles.inGrid} to={`/${frontmatter.language}/${frontmatter.slug}`}>
+    <Link className={styles.inGrid} to={`/blog/${frontmatter.language}/${frontmatter.slug}`}>
       <div className={styles.leadMediaThumb}>
         <GatsbyImage
           image={image!!}
