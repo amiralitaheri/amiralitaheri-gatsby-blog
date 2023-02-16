@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/blog/2020/08/*"
+  to = "/blog/fa/چگونه-در-بازیهای-gameecom-تقلب-کنیم"
+  status = 301
+  force = true

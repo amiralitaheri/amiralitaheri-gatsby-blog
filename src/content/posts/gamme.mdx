@@ -1,0 +1,125 @@
+---
+title: چگونه در بازی‌های Gamee.com تقلب کنیم!
+slug: چگونه-در-بازیهای-gameecom-تقلب-کنیم
+publishedAt: 2020-08-25T00:00:00.000Z
+excerpt: "هک بازی‌های Gamee خیلی ساده!\nتو این پست می‌خواهیم با کمک Burp Suite بازی‌های Gamee که خیلی تو تلگرام محبوب هستن رو هک کنیم و یه رکورد خیلی بالا برای خودمون ثبت کنیم."
+language: fa
+tags: ["game", "javascript", "brup", "web", "gamee", "cheat"]
+mainImage: { src: "../../images/posts/gamee/gamee.webp", alt: "Cheating in Gamee" }
+---
+
+import WarningBlock from "../../components/warningBlock";
+
+<WarningBlock type="error">
+    *تاریخ گذشته*: با توجه به تغییرات سایت Gamee با روشی که در این پست نوشته شده است نمی‌توانید امتیاز خود را تغییر دهید.
+</WarningBlock>
+
+تو چند دقیقه آینده می‌خوایم یاد بگیریم چه‌گونه بازی‌های سایت
+[Gamee](https://www.gamee.com/)
+رو هک کنیم؛ و با نرم‌افزار
+Burp Suite
+آشنا بشیم. و به این فکر کنیم که سایت
+[Gamee](https://www.gamee.com/)
+چه‌کاری می‌تونه بکنه تا جلو این روش رو بگیره؟
+
+
+## مرحله اول : نصب و راه‌اندازی برنامه Burp Suite
+
+برنامه Burp Suite یکی از معروف‌ترین نرم‌افزارها در حوزه امنیت هستش که با کمک اون می‌تونید به راحتی اطلاعاتی که بین کامپیوتر شما و سرور رد و بدل میشه رو ببینید، و حتی اون‌ها رو تغییر بدید.
+
+ابتدا نسخه Community برنامه رو از سایت https://portswigger.net/burp دانلود می‌کنید و رو سیستمتون نصب می‌کنید.سپس یه پروژه با تنظیمات پیشفرض می‌سازید.
+
+![Burp intro screen](../../images/posts/gamee/burp-intro-screen.webp)
+
+حالا به تب Proxy و زیرشاخه Option میرید. و مطمئن می‌شید که یه Proxy مثل شکل زیر تعریف شده باشه.
+
+![Burp proxy setup](../../images/posts/gamee/burp-proxy-setup.webp)
+
+حالا در مرورگرتون هم همین Proxy رو تنظیم می‌کنید.
+
+![Firefox proxy setting](../../images/posts/gamee/firefox-proxy-settings.webp)
+
+در این مرحله دیگه نمی‌تونید سایت‌های HTTPS رو باز کنید. چون Brup Suite داره به عنوان یه Middle Man عمل می‌کنه و هدف اصلی HTTPS جلوگیری از این کار هستش.
+
+با مرورگرتون به آدرس http://burp برید. CA certificate رو دانلود کنید و رو سیستمتون نصب کنید. به برنامه Burp Suite تب Proxy و زیرشاخه Intercept برید و مطمئن بشید که روی حالت Intercept is off قرار داره.
+
+![Burp intercept setting](../../images/posts/gamee/burp-intercept-settings.webp)
+
+تو این مرحله باید بتونید به راحتی سایت
+[Gamee.com](https://gamee.com)
+رو باز کنید.
+
+خلاصه: تو این بخش کاری کردیم که داده‌هامون از طریق نرم‌افزار Burp Suite رد بشن. اگه گزینه Intercept رو روشن کنیم، می‌تونیم تک تک درخواست‌هایی که مرورگرمون به اینترنت می‌فرسته رو ببینیم.
+
+## مرحله دو : تقلب!!
+
+بازی مورد نظر رو تو سایت Gamee.com انتخاب می‌کنید و صبر می‌کنید تا بازی به طور کامل لود بشه. سپس گزینه Intercept برنامه Burp Suite رو روشن می‌کنیم.
+
+![Gamee Hack](../../images/posts/gamee/gamee-hack.webp)
+
+حالا خیلی سریع یه دست می‌بازیم :)
+
+پکت‌ها رو Forward می‌کنیم تا به پکت زیر برسیم.
+
+![Burp captured packet](../../images/posts/gamee/burp-captured-packet.jpg)
+
+```text
+POST / HTTP/1.1
+Host: api.service.gameeapp.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0
+Accept: */*
+Accept-Language: en-GB,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: text/plain;charset=UTF-8
+Content-Length: 506
+x-install-uuid: ac168b6a-0426-49f9-9276-af930db549b3
+client-language: en
+Origin: https://www.gamee.com
+authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOiIxNTg2NTYzMjMzIiwidXNlcklkIjoxMzQ0ODAzMiwiaW5zdGFsbFV1aWQiOiJhYzE2OGI2YS0wNDI2LTQ5ZjktOTI3Ni1hZjkzMGRiNTQ5YjMiLCJ0eXBlIjoiYXV0aGVudGljYXRpb25Ub2tlbiIsImF1dGhvcml6YXRpb25MZXZlbCI6ImJvdCIsInBsYXRmb3JtIjoiYm90LXRlbGVncmFtIn0.I--MUm0I1Y-O-
+Referer: https://www.gamee.com/game-bot/u0yXP5o-d630821224bf2c2bf362b9054ff7d684d7da0a28
+Connection: close
+{"jsonrpc":"2.0","id":"game.saveWebGameplay","method":"game.saveWebGameplay","params":{"gameplayData":{"gameId":147,"score":3,"playTime":17,"releaseNumber":5,"gameStateData":"","replayVariant":null,"replayData":null,"replayDataChecksum":null,"gameUrl":"/game-bot/u0yXP5o-d630821224bf2c2bf362b9054ff7d684d7da0a28","createdTime":"2020-04-11T03:34:31+04:30","metadata":{"gameplayId":9},"checksum":"b107d1afbafc4bdef2ae9bb996d71abc","isSaveState":false,"repetitiveGameplay":false,"botSpecificScoreData":null}}}
+```
+
+- مقدار score و playTime رو تغییر میدیم.
+- تگ Content-Length رو از تو header حذف می‌کنیم.
+- مقدار checksum رو هم باید تغییر دوباره حساب بکنیم.
+
+برای اینکه بفهمیم checksum چه‌طوری محاسبه شده. Developer Option رو فعال می‌کنیم و با یکم جست‌وجو تابع getChecksum رو تو مسیر webpack:///src/client/common/api/helpers.js پیدا می‌کنیم.
+
+https://npm.runkit.com/md5
+
+```javascript
+var md5 = require("md5");
+var score =200;
+var playTime = 100;
+var url = '/game-bot/u0yXP5o-d630821224bf2c2bf362b9054ff7d684d7da0a28';
+var gameStateData = '';
+md5(`${score}:${playTime}:${url}:${gameStateData}:crmjbjm3lczhlgnek9uaxz2l9svlfjw14npauhen`);
+```
+
+![MD5 computation](../../images/posts/gamee/md5-computation.jpg)
+
+پس از تغییر دادن مواردی که گفته شد دکمه forward رو میزنید و Intercept رو خاموش می‌کنید.
+
+https://www.gamee.com/leaderboards/game/ZTaHq2lM
+
+چندتا نکته:
+- امتیاز خیلی بالا نزنید.
+- رابطه score با playTime باید منطقی باشه.
+- تابع محاسبه checksum برای همه بازی‌ها یکی هستش.
+
+## چرا انقدر ساده هک شد؟
+
+- ارتباط بین سرور و کلاینت بازی رمزگذاری نشده بود.
+- کد خیلی تمیزی نوشته بودن و هیچ تلاشی برای مبهم سازی کد نکرده بودن.
+
+هر چه‌قدر هم دو تا نکته بالا رو رعایت کنن چون بازی‌ها رو به زبان JavaScript نوشتن به سادگی میشه فهمید چی به چی هستش و کد رو تغییر داد.
+
+راه حلی که الان خیلی خوب هستش و کم کم داره کل اینترنت به اون سمت میره، استفاده از WebAssembly هستش. با استفاده از WebAssembly هم عملکرد سایت از نظر سرعت افزایش پیدا می‌کنه و هم خوانایی کد برای reverse engineering خیلی کم میشه.
+
+میشه گفت که تقریباً تقلب برای افراد عادی ناممکن میشه و افراد خیلی حرفه‌ای هم کارهای مهمتری دارن تا بیان بازی هک کنن.
+
+اگه بخوایم واقعاً تقلب رو غیر ممکن کنیم، بازی روی محیطی اجرا بشه که بهش اطمینان داریم. یعنی تمام محاسبات بازی سمت سرور انجام بشه و فقط خروجی برای کاربر نمایش داده بشه.
+
+

@@ -1,0 +1,11 @@
+.verticalLine {
+  border-left: 5px solid var(--color-accent);
+  height: 50vh;
+}
+
+.banner{
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
