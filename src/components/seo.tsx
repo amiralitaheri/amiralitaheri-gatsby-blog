@@ -33,13 +33,13 @@ const Seo: FC<SeoProps> = ({
   );
 
   const metaDescription = description || site.siteMetadata.description;
-  const defaultTitle = site.siteMetadata?.title;
-  const keys = keywords || site.siteMetadata?.keywords;
+  const defaultTitle = site.siteMetadata.title;
+  const keys = keywords || site.siteMetadata.keywords;
   const image = mainImage && getImage(mainImage);
 
   return (
     <>
-      <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
+      <title>{title ? `${title} | ${defaultTitle}` : defaultTitle}</title>
       <meta name="description" content={metaDescription} />
       <meta name="keywords" content={keys} />
       <meta property="og:title" content={title} />
