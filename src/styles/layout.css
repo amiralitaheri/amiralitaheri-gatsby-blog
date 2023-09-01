@@ -1,4 +1,4 @@
-@import './custom-properties.css';
+@import "./custom-properties.css";
 
 html {
   font-family: var(--font-family-sans);
@@ -30,7 +30,6 @@ a {
       color: var(--color-accent);
     }
   }
-
 }
 
 .sectionHeader {
@@ -59,7 +58,7 @@ p {
   max-width: 70ch;
 }
 
-::selection{
+::selection {
   background-color: var(--color-accent);
   color: var(--color-white);
 }

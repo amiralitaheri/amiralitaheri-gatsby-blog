@@ -10,17 +10,15 @@ import { Frontmatter } from "../types/post";
 const BlogPostPreview: FC<{ frontmatter: Frontmatter }> = ({ frontmatter }) => {
   const image = getImage(frontmatter.mainImage.src);
   return (
-    <Link className={styles.inGrid} to={`/blog/${frontmatter.language}/${frontmatter.slug}`}>
+    <Link
+      className={styles.inGrid}
+      to={`/blog/${frontmatter.language}/${frontmatter.slug}`}
+    >
       <div className={styles.leadMediaThumb}>
-        <GatsbyImage
-          image={image!!}
-          alt={frontmatter.mainImage.alt}
-        />
+        <GatsbyImage image={image!!} alt={frontmatter.mainImage.alt} />
       </div>
       <div className={cn(styles.text, frontmatter.language)}>
-        <h3 className={styles.title}>
-          {frontmatter.title}
-        </h3>
+        <h3 className={styles.title}>{frontmatter.title}</h3>
         <div className={cn(styles.excerpt)}>{frontmatter.excerpt}</div>
         <div className={styles.date}>
           {format(new Date(frontmatter.publishedAt), "MMMM do, yyyy")}

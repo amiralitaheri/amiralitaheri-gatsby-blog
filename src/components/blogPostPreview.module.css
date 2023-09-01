@@ -1,4 +1,4 @@
-@import '../styles/custom-media.css';
+@import "../styles/custom-media.css";
 
 .root {
   display: block;
@@ -21,7 +21,7 @@
 }
 
 .title {
-  composes: responsiveTitle3 from '../styles/typography.css';
+  composes: responsiveTitle3 from "../styles/typography.css";
   @media (hover: hover) {
     .root:hover & {
       text-decoration: underline;

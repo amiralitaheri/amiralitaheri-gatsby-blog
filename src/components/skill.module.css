@@ -1,4 +1,4 @@
-@import '../styles/custom-properties.css';
+@import "../styles/custom-properties.css";
 
 .skill {
   width: 80vw;
@@ -29,7 +29,7 @@
     margin-right: 10px;
     list-style: none;
     &::before {
-      content: '#';
+      content: "#";
     }
   }
 }

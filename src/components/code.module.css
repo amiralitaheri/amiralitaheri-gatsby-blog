@@ -15,7 +15,7 @@
 
   & button {
     box-sizing: border-box;
-    margin: .3rem;
+    margin: 0.3rem;
     background-color: inherit;
     color: inherit;
     box-shadow: none;
@@ -45,8 +45,8 @@
   }
 
   & span {
-    padding: 0 .3rem;
-    margin: .3rem 1.5rem;
+    padding: 0 0.3rem;
+    margin: 0.3rem 1.5rem;
     border-left: 2px solid var(--color-accent);
   }
 }

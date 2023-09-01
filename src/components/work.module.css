@@ -24,7 +24,7 @@
   margin: min(3vw, 50px);
   max-width: min(60vw, 400px);
   max-height: min(60vw, 400px);
-    filter: grayscale(1);
+  filter: grayscale(1);
 }
 
 .date {
@@ -34,7 +34,7 @@
 .tags {
   align-self: end;
   justify-self: end;
-   span {
+  span {
     color: var(--color-light-gray);
     font-size: var(--font-small-size);
     margin-right: 10px;

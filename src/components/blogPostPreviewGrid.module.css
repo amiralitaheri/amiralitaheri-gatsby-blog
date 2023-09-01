@@ -1,4 +1,4 @@
-@import '../styles/custom-media.css';
+@import "../styles/custom-media.css";
 
 .root {
   margin: 2em 0 4em;
@@ -31,7 +31,7 @@
 }
 
 .browseMoreNav {
-  composes: small from '../styles/typography.css';
+  composes: small from "../styles/typography.css";
   margin-top: 1rem;
   text-align: right;
 

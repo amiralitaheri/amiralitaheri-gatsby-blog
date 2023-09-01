@@ -1,4 +1,4 @@
-@import './custom-media.css';
+@import "./custom-media.css";
 
 /*
  * Statically sized elements
@@ -39,8 +39,6 @@
   line-height: var(--font-micro-line-height);
   text-transform: uppercase;
 }
-
-
 
 /*
  * Responsively sized elements
