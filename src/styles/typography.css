@@ -1,4 +1,4 @@
-@import '../styles/custom-media.css';
+@import './custom-media.css';
 
 /*
  * Statically sized elements
@@ -51,12 +51,12 @@
   line-height: var(--font-base-line-height);
   margin: 0.5rem 0 1rem 0;
 
-  @media (--media-min-small) {
+  @media (min-width: 450px) {
     font-size: var(--font-base-size);
     line-height: var(--font-base-line-height);
   }
 
-  @media (--media-min-medium) {
+  @media (min-width: 675px) {
     font-size: var(--font-large-size);
     line-height: var(--font-large-line-height);
   }
@@ -72,12 +72,12 @@
   line-height: var(--font-title2-line-height);
   margin: 1rem 0 2rem;
 
-  @media (--media-min-small) {
+  @media (min-width: 450px) {
     font-size: var(--font-title2-size);
     line-height: var(--font-title2-line-height);
   }
 
-  @media (--media-min-medium) {
+  @media (min-width: 675px) {
     font-size: var(--font-title1-size);
     line-height: var(--font-title1-line-height);
   }
@@ -89,12 +89,12 @@
   line-height: var(--font-large-line-height);
   margin: 1.5rem 0 0.5rem;
 
-  @media (--media-min-small) {
+  @media (min-width: 450px) {
     font-size: var(--font-title3-size);
     line-height: var(--font-title3-line-height);
   }
 
-  @media (--media-min-medium) {
+  @media (min-width: 675px) {
     font-size: var(--font-title2-size);
     line-height: var(--font-title2-line-height);
   }
@@ -106,12 +106,12 @@
   line-height: var(--font-large-line-height);
   margin: 1rem 0 0.5rem;
 
-  @media (--media-min-small) {
+  @media (min-width: 450px) {
     font-size: var(--font-large-size);
     line-height: var(--font-large-line-height);
   }
 
-  @media (--media-min-medium) {
+  @media (min-width: 675px) {
     font-size: var(--font-title3-size);
     line-height: var(--font-title3-line-height);
   }
@@ -123,12 +123,12 @@
   line-height: var(--font-base-line-height);
   margin: 1rem 0 0.5rem;
 
-  @media (--media-min-small) {
+  @media (min-width: 450px) {
     font-size: var(--font-base-size);
     line-height: var(--font-base-line-height);
   }
 
-  @media (--media-min-medium) {
+  @media (min-width: 675px) {
     font-size: var(--font-large-size);
     line-height: var(--font-large-line-height);
   }

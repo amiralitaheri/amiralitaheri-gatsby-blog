@@ -8,7 +8,11 @@ module.exports = () => ({
         "custom-media-queries": {
           preserve: false,
         },
+        "custom-properties": {
+          preserve: false
+        }
       },
     }),
+    require("postcss-sort-media-queries"),
   ],
 });

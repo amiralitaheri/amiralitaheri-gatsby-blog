@@ -21,6 +21,7 @@
 }
 
 .title {
+  composes: responsiveTitle3 from '../styles/typography.css';
   @media (hover: hover) {
     .root:hover & {
       text-decoration: underline;
