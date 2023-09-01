@@ -12,7 +12,8 @@
 
 .leadMediaThumb {
   position: relative;
-  background: var(--color-very-light-gray);
+  height: 150px;
+  display: flex;
 }
 
 .text {

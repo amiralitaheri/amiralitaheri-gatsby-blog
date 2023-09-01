@@ -16,7 +16,6 @@ const BlogPostPreview: FC<{ frontmatter: Frontmatter }> = ({ frontmatter }) => {
         <GatsbyImage
           image={image!!}
           alt={frontmatter.mainImage.alt}
-          objectFit="contain"
         />
       </div>
       <div className={cn(styles.text, frontmatter.language)}>
