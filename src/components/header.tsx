@@ -24,10 +24,11 @@ const Header = () => {
         </div>
 
         <button
+          aria-label="menu"
           className={styles.toggleNavButton}
           onClick={() => setShowNav((prevState) => !prevState)}
         >
-          <RxHamburgerMenu/>
+          <RxHamburgerMenu />
         </button>
         {(
           typeof window !== "undefined"

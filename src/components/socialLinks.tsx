@@ -5,7 +5,7 @@ import {
   FaGithub,
   FaTwitter,
   FaLinkedinIn,
-  FaGitlab
+  FaGitlab,
 } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import * as styles from "./socialLinks..module.css";
@@ -13,7 +13,12 @@ import * as styles from "./socialLinks..module.css";
 const SocialLinks: FC<{ dir: "column" | "row" }> = ({ dir }) => (
   <ul className={styles.socialLinks} style={{ flexDirection: dir }}>
     <li>
-      <a href="https://github.com/amiralitaheri" target="_blank" rel="noopener">
+      <a
+        href="https://github.com/amiralitaheri"
+        target="_blank"
+        rel="noopener"
+        aria-label="github"
+      >
         <FaGithub />
       </a>
     </li>
@@ -22,12 +27,18 @@ const SocialLinks: FC<{ dir: "column" | "row" }> = ({ dir }) => (
         href="https://twitter.com/amiralitaheri64"
         target="_blank"
         rel="noopener"
+        aria-label="twitter"
       >
         <FaTwitter />
       </a>
     </li>
     <li>
-      <a href="https://t.me/amiralitaheri" target="_blank" rel="noopener">
+      <a
+        href="https://t.me/amiralitaheri"
+        target="_blank"
+        rel="noopener"
+        aria-label="telegram"
+      >
         <FaTelegramPlane />
       </a>
     </li>
@@ -36,6 +47,7 @@ const SocialLinks: FC<{ dir: "column" | "row" }> = ({ dir }) => (
         href="https://www.instagram.com/amiralitaheri64"
         target="_blank"
         rel="noopener"
+        aria-label="instagram"
       >
         <FaInstagram />
       </a>
@@ -45,17 +57,28 @@ const SocialLinks: FC<{ dir: "column" | "row" }> = ({ dir }) => (
         href="https://www.linkedin.com/in/amiralitaheri64/"
         target="_blank"
         rel="noopener"
+        aria-label="linkedin"
       >
         <FaLinkedinIn />
       </a>
     </li>
     <li>
-      <a href="mailto:amiralitaheri64@gmail.com" target="_blank" rel="noopener">
+      <a
+        href="mailto:amiralitaheri64@gmail.com"
+        target="_blank"
+        rel="noopener"
+        aria-label="email"
+      >
         <FiMail />
       </a>
     </li>
     <li>
-      <a href="https://gitlab.com/amiralitaheri" target="_blank" rel="noopener">
+      <a
+        href="https://gitlab.com/amiralitaheri"
+        target="_blank"
+        rel="noopener"
+        aria-label="gitlab"
+      >
         <FaGitlab />
       </a>
     </li>
