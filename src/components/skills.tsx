@@ -9,7 +9,7 @@ const skills: ISkill[] = [
   {
     name: "Front-End Development",
     description: <FrontEnd />,
-    subSkills: ["React", "Gatsby", "Next.js", "JAMStack", "Typescript"],
+    subSkills: ["React", "Next.js", "Solid.js", "JAMStack", "Typescript"],
   },
   {
     name: "Web Scraping",

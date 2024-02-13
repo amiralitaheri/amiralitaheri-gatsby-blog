@@ -12,7 +12,7 @@ const works: IWork[] = [
   {
     name: "Exbito",
     description: <Exbito />,
-    date: "2020 - present",
+    date: "2020 - 2023",
     imageName: "exbito",
     tags: ["Website", "Next.js", "React", "Front-end Development", "Python"],
   },

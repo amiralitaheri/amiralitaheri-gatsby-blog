@@ -6,8 +6,11 @@ const MainSpeech = () => (
   <div>
     <ul className={styles.mainSpeech}>
       <li>Fast learner</li>
-      <li>React front-end developer</li>
-      <li>Professional google searcher</li>
+      <li>Web developer</li>
+      <li>
+        Professional <span className={styles.lineThrough}>google searcher</span>{" "}
+        AI user
+      </li>
       <li>A Confused man in tech world</li>
       <li className={styles.lineThrough}>Computer engineering student</li>
     </ul>
