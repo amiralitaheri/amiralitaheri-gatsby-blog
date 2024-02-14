@@ -7,7 +7,7 @@ import Seo from "../components/seo";
 
 export const query = graphql`
   query BlogPostListQuery {
-    posts: allMdx(filter: { frontmatter: { title: { ne: null } } }) {
+    posts: allMdx(filter: { frontmatter: { type: { eq: "post" } } }) {
       nodes {
         id
         frontmatter {
