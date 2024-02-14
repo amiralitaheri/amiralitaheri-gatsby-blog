@@ -8,7 +8,7 @@ import {
   FaGitlab,
 } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
-import * as styles from "./socialLinks..module.css";
+import * as styles from "./socialLinks.module.css";
 
 const SocialLinks: FC<{ dir: "column" | "row" }> = ({ dir }) => (
   <ul className={styles.socialLinks} style={{ flexDirection: dir }}>
