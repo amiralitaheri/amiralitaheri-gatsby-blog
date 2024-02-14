@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { VscWarning } from "react-icons/all";
+import { VscWarning } from "react-icons/vsc";
 import { cn } from "./utils";
 import * as styles from "./warningBlock.module.css";
 

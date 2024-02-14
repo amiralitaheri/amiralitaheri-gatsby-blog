@@ -2,7 +2,7 @@ import * as React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import * as styles from "./header.module.css";
 import { useState } from "react";
-import { RxHamburgerMenu } from "react-icons/all";
+import { RxHamburgerMenu } from "react-icons/rx";
 import { cn } from "./utils";
 
 const Header = () => {
