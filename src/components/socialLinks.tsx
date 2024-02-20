@@ -3,10 +3,10 @@ import {
   FaTelegramPlane,
   FaInstagram,
   FaGithub,
-  FaTwitter,
   FaLinkedinIn,
   FaGitlab,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { FiMail } from "react-icons/fi";
 import * as styles from "./socialLinks.module.css";
 
@@ -29,7 +29,7 @@ const SocialLinks: FC<{ dir: "column" | "row" }> = ({ dir }) => (
         rel="noopener"
         aria-label="twitter"
       >
-        <FaTwitter />
+        <FaXTwitter />
       </a>
     </li>
     <li>
