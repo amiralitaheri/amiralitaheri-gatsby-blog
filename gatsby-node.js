@@ -14,7 +14,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const result = await graphql(`
     query {
-      allMdx(filter: { frontmatter: { title: { eq: "post" } } }) {
+      allMdx(filter: { frontmatter: { type: { eq: "post" } } }) {
         nodes {
           id
           frontmatter {
