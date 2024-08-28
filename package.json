@@ -45,5 +45,10 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "dependencies": {
+    "gatsby-plugin-canonical-urls": "^5.13.1",
+    "install": "^0.13.0",
+    "npm": "^10.8.2"
   }
 }

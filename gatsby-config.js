@@ -12,7 +12,7 @@ module.exports = {
     title: "Seyed Amirali Taheri",
     description:
       "Personal website (blog and portfolio) of Seyed Amirali Taheri; A software developer.",
-    siteUrl: "https://amiralitaheri.ir",
+    siteUrl: "https://amiralitaheri.com",
     keywords:
       "blog, developer, amirali, portfolio, برنامه نویس, امیرعلی, وبلاگ, فرانت, frontend, react, amiralitaheri",
   },
@@ -81,6 +81,13 @@ module.exports = {
       resolve: "gatsby-plugin-gtag",
       options: {
         trackingId: process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://amiralitaheri.com`,
+        stripQueryString: true,
       },
     },
   ],
